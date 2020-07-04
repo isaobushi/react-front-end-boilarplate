@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { RouteComponentProps } from 'react-router-dom'
 
-const Login = () => <div>Login</div>
+const Login: React.FC<RouteComponentProps> = () => <div>Login</div>
 
 export default Login

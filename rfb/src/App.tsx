@@ -5,7 +5,8 @@ import { routes } from './router/config';
 import { BrowserRouter } from 'react-router-dom';
 
 const App: React.FC = () => {
-  return( <BrowserRouter>
+  return( 
+  <BrowserRouter>
     <Router routes={routes} />
   </BrowserRouter>)
 }
