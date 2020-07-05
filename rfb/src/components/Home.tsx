@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react'
-
-const Home = () => <div>Home</div>
+import React from 'react'
+import { RouteComponentProps, Link } from 'react-router-dom'
+     
+const Home: React.FC<RouteComponentProps> = () => { 
+ return (
+     <>
+     <Link to="/login">Loign</Link>
+     <Link to="/signup">Sign Up</Link>
+     </>
+ )
+}
 
 export default Home

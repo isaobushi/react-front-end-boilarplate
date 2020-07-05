@@ -12,16 +12,17 @@ const user: IUser = {
 const RouteWithSubRoutes = (route: IRoute) => {
     /** Authenticated flag */
     const authenticated: boolean = user.authenticated;
-  
+    
     return (
+      
       <Suspense fallback={route.fallback}>
+        {console.log(route.redirect)}
         <Route
           path={route.path}
           render={(props) =>
             route.redirect ? <Redirect to={route.redirect}/> :
               route.private ? (
-                authenticated ? route.component &&
-                  <route.component {...props} routes={route.routes}/> : <Redirect to='/home/login'/>
+                authenticated ? route.component : <Redirect to='/home/login'/>
               ) : route.component && <route.component {...props} routes={route.routes}/>
           }
         />
