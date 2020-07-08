@@ -19,7 +19,7 @@ const containerVariants = {
   } 
 }
 
-const HomePage = styled(motion.div).attrs(()=>({
+const LoginPage = styled(motion.div).attrs(()=>({
   variants:{containerVariants},
   initial:"hidden",
   animate:"visibile",
@@ -28,8 +28,8 @@ const HomePage = styled(motion.div).attrs(()=>({
   position: relative;
   display: flex;
   justify-content:center;
-  height: 80vh;
-  width: 90vw;
+  height: 100vh;
+  width: 100vw;
   background: red;
   border-radius: 5px;
   cursor: pointer;
@@ -38,7 +38,6 @@ const HomePage = styled(motion.div).attrs(()=>({
 
 const BoxStyled = styled(motion.div).attrs(() => ({
     initial: "hidden",
-    animate: "visible",
     exit: "exit",
     variants}))`
     display: flex;
@@ -46,4 +45,4 @@ const BoxStyled = styled(motion.div).attrs(() => ({
    height: 20vh;
 `
 
-export { HomePage, BoxStyled }
+export { LoginPage, BoxStyled }

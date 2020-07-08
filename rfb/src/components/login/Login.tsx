@@ -1,8 +1,13 @@
 import React from 'react'
-import { RouteComponentProps } from 'react-router-dom'
+import { RouteComponentProps, Link, withRouter } from 'react-router-dom'
+import * as  LoginStyle  from "./login.style"
      
 const Login: React.FC<RouteComponentProps> = () => { 
- return   <div>login</div>
+ return  (
+    <LoginStyle.LoginPage>
+        <Link to="/home">Home</Link>
+    </LoginStyle.LoginPage>
+ )
 }
 
-export default Login
+export default withRouter(Login)

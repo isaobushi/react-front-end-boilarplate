@@ -16,13 +16,12 @@ const RouteWithSubRoutes = (route: IRoute) => {
     return (
       
       <Suspense fallback={route.fallback}>
-        {console.log(route.redirect)}
         <Route
           path={route.path}
           render={(props) =>
             route.redirect ? <Redirect to={route.redirect}/> :
               route.private ? (
-                authenticated ? route.component : <Redirect to='/home/login'/>
+                authenticated ? route.component : <Redirect to='/login'></Redirect>
               ) : route.component && <route.component {...props} routes={route.routes}/>
           }
         />

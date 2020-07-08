@@ -17,31 +17,29 @@ export interface IRoute {
 }
 
 export const routes: IRoute[] = [
-  {
-    path: '/',
-    exact: true,
-    redirect: '/home',
-    fallback: <div> Loading... </div>
-  },
+  
   {
     path: '/home',
     component: lazy(() => import('../components/home/Home')),
-    exact: false,
+    exact: true,
     private: false,
-    fallback: <div> Loading... </div>
+    fallback: <div> Loading... </div>,
+    routes: [
+      {
+        path: '/home/signup',
+        component: lazy(() => import('../components/signUp/SignUp')),
+        exact: true,
+        private: false,
+        fallback: <div> Loading... </div>
+      },
+    ]
   },
 
-  {
-    path: '/signup',
-    component: lazy(() => import('../components/signUp/SignUp')),
-    exact: false,
-    private: false,
-    fallback: <div> Loading... </div>
-  },
+
   {
     path: '/login',
     component: lazy(() => import('../components/login/Login')),
-    exact: false,
+    exact: true,
     private: false,
     fallback: <div> Loading... </div>
   },
@@ -51,5 +49,11 @@ export const routes: IRoute[] = [
     exact: false,
     private: true,
     fallback: <div> Loading... </div>
-  }
+  },
+  {
+    path: '/',
+    exact: true,
+    redirect: '/home',
+    fallback: <div> Loading... </div>
+  },
 ];
